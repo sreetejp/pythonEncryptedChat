@@ -7,6 +7,9 @@ def listen_for_client(cs, separator):
     while True:
         try:
             msg = cs.recv(1024).decode()
+            if not msg:
+                # If the message is empty, the client has disconnected
+                break
 
             # Encrypt the message using the rot13 algorithm
             msg = codecs.encode(msg, "rot13")
@@ -18,6 +21,9 @@ def listen_for_client(cs, separator):
                 client_socket.send(msg.encode())
         except Exception as e:
             print(f"[!] Error: {e}")
+        finally:
+            # When the loop ends, remove the client socket from the list of connected clients
+            client_sockets.remove(cs)
 
 
 SERVER_HOST = "0.0.0.0"
