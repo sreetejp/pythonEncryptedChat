@@ -1,6 +1,6 @@
 import socket
 import random
-import codecs  # Import the codecs module
+import codecs
 from threading import Thread
 from datetime import datetime
 from colorama import Fore, init, Back
