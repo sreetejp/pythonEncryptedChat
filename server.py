@@ -1,5 +1,5 @@
 import socket
-import codecs  # Import the codecs module
+import codecs
 from threading import Thread
 
 
