@@ -1,2 +1,2 @@
 # pythonEncryptedChat
-Barebones multithreaded chat application that uses ROT13 encryption
+Simple multithreaded chat application that uses ROT13 encryption
